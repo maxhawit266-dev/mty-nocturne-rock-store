@@ -1,0 +1,160 @@
+.dashboard {
+  background: #0a0a0a;
+  color: #fff;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+  background: #1a1a1a;
+  border-bottom: 3px solid #8b0000;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  color: #ff0000;
+  margin: 0;
+}
+
+.navbar button {
+  background: #8b0000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.navbar button:hover {
+  background: #ff0000;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  padding: 20px 40px 0;
+}
+
+.tabs button {
+  background: #333;
+  color: #aaa;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-top: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.tabs button.active {
+  background: #1a1a1a;
+  color: #ff0000;
+  border-top-color: #ff0000;
+}
+
+.content {
+  padding: 40px;
+}
+
+.content section h2 {
+  color: #ff0000;
+  margin-top: 0;
+}
+
+.form {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input,
+.form textarea {
+  padding: 10px;
+  background: #333;
+  border: 1px solid #555;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.form button {
+  padding: 10px;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form button:hover {
+  background: #ff6600;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead {
+  background: #333;
+  border-bottom: 2px solid #8b0000;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.table th {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.table tr:hover {
+  background: #2a2a2a;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.pending {
+  background: #666;
+  color: #fff;
+}
+
+.badge.processing {
+  background: #ff6600;
+  color: #000;
+}
+
+.badge.shipped {
+  background: #00aa00;
+  color: #fff;
+}
+
+.badge.completed {
+  background: #00ff00;
+  color: #000;
+}
+
+.badge.paid {
+  background: #00aa00;
+  color: #fff;
+}
