@@ -1,13 +1,13 @@
 # 🤘 MTY NOCTURNE ROCK STORE 🤘
 
-Fully functional rock-metal clothing e-commerce store built with Next.js, Firebase, Stripe, and Resend.
+Fully functional rock-metal clothing e-commerce store built with Next.js, Firebase, PayPal, and Resend.
 
 ## Features
 
 ✅ **Complete E-Commerce**
 - Product catalog with categories
 - Shopping cart with quantity management
-- Stripe payment integration
+- PayPal payment integration
 - Order tracking
 
 ✅ **Admin Dashboard**
@@ -40,7 +40,7 @@ cp .env.local.example .env.local
 
 Fill in all the required variables:
 - Firebase credentials
-- Stripe API keys
+- PayPal API keys
 - Resend API key
 - JWT secret
 - Admin credentials
@@ -77,15 +77,13 @@ Go to [http://localhost:3000/admin/login](http://localhost:3000/admin/login) wit
 - `POST /api/orders` - Create order
 - `PUT /api/orders/[id]` - Update order status (admin)
 
-### Checkout
-- `POST /api/checkout` - Create Stripe checkout session
+### PayPal
+- `POST /api/paypal/create-order` - Create PayPal order
+- `POST /api/paypal/capture-order` - Capture PayPal payment
 
 ### Authentication
 - `POST /api/auth/login` - Admin login
 - `POST /api/auth/logout` - Admin logout
-
-### Webhooks
-- `POST /api/webhook/stripe` - Stripe payment events
 
 ## Deployment to Vercel
 
@@ -117,10 +115,23 @@ Go to [http://localhost:3000/admin/login](http://localhost:3000/admin/login) wit
   "total": "number",
   "status": "pending|processing|shipped|completed",
   "paymentStatus": "pending|paid|failed",
-  "stripeSessionId": "string",
+  "paypalOrderId": "string",
   "createdAt": "timestamp"
 }
 ```
+
+## Getting PayPal API Keys
+
+1. Go to [PayPal Developer](https://developer.paypal.com)
+2. Sign up or log in
+3. Go to Dashboard → Apps & Credentials
+4. Select "Sandbox" (for testing)
+5. Find your **Client ID** and **Secret**
+6. Add them to `.env.local`:
+   ```
+   NEXT_PUBLIC_PAYPAL_CLIENT_ID=your_client_id
+   PAYPAL_CLIENT_SECRET=your_secret
+   ```
 
 ## License
 
